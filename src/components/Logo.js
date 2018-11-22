@@ -3,10 +3,12 @@ import styled from 'styled-components';
 
 import { _color, _font } from '../base/constants';
 
+import { Link } from 'gatsby';
+
 /**
  * Styled Components
  */
-const LogoBlock = styled.a`
+const LogoBlock = styled(Link)`
   color: ${_color.primary};
   font-family: ${_font.secondary};
   font-size: 36px;
@@ -30,7 +32,7 @@ const LogoBlock = styled.a`
  */
 const Logo = () => {
   return (
-    <LogoBlock>
+    <LogoBlock to="/">
       Flux <span>/</span>
     </LogoBlock>
   );

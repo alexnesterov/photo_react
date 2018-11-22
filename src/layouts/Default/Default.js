@@ -30,7 +30,7 @@ const Layout = ({ children }) => (
     `}
     render={data => (
       <>
-        <GlobalStyle back={BackImage}/>
+        <GlobalStyle back={BackImage} />
         <Helmet
           title={data.site.siteMetadata.title}
           meta={[
@@ -39,11 +39,12 @@ const Layout = ({ children }) => (
           ]}
         >
           <html lang="en" />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500,700"></link>
+          <link
+            rel="stylesheet"
+            href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500,700"
+          />
         </Helmet>
-        <LayoutBlock>
-          {children}
-        </LayoutBlock>
+        <LayoutBlock>{children}</LayoutBlock>
       </>
     )}
   />

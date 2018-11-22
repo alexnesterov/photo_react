@@ -51,9 +51,7 @@ const Main = ({ children }) => {
           <MainSidebar>
             <Sidebar />
           </MainSidebar>
-          <MainContent>
-            {children}
-          </MainContent>
+          <MainContent>{children}</MainContent>
         </MainInner>
       </MainBlock>
     </Layout>

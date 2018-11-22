@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { _media, _color } from '../base/constants';
 
+import { Link } from 'gatsby';
+
 /**
  * Styled Components
  */
@@ -33,7 +35,7 @@ const NavigationItem = styled.li`
   `}
 `;
 
-const NavigationLink = styled.a`
+const NavigationLink = styled(Link)`
   display: inline-block;
   color: ${_color.primary};
   text-decoration: none;
@@ -52,16 +54,16 @@ const Navigation = () => {
     <NavigationBlock>
       <NavigationList>
         <NavigationItem>
-          <NavigationLink>Home</NavigationLink>
+          <NavigationLink to="/">Home</NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink>About</NavigationLink>
+          <NavigationLink to="/about">About</NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink>Work</NavigationLink>
+          <NavigationLink to="/work">Work</NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink>Contact</NavigationLink>
+          <NavigationLink to="/contact">Contact</NavigationLink>
         </NavigationItem>
       </NavigationList>
     </NavigationBlock>

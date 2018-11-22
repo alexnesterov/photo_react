@@ -9,7 +9,7 @@ export const _color = {
   black: '#000',
   white: '#fff',
   gray: '#464a4c',
-  page: '#929292'
+  page: '#929292',
 };
 
 export const _font = {
@@ -23,7 +23,7 @@ export const _breakpoint = {
   phone: 576,
   mobile: 768,
   tablet: 992,
-  desktop: 1200
+  desktop: 1200,
 };
 
 export const _media = Object.keys(_breakpoint).reduce((acc, label) => {
