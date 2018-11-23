@@ -67,17 +67,17 @@ const PostContent = styled.div`
 /**
  * Post Component
  */
-const Post = () => {
+const Post = ({ post }) => {
   return (
     <PostBlock>
       <PostHeader />
       <PostPoster src="" alt="" />
       <PostMain>
         <PostHead>
-          <PostTitle>Post title</PostTitle>
-          <PostDate>date</PostDate>
+          <PostTitle>{post.frontmatter.title}</PostTitle>
+          <PostDate>{post.frontmatter.date}</PostDate>
         </PostHead>
-        <PostContent>content</PostContent>
+        <PostContent>{post.excerpt}</PostContent>
       </PostMain>
     </PostBlock>
   );

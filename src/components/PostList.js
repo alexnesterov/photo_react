@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import Post from './Post';
 
 /**
@@ -22,12 +23,15 @@ const PostListItem = styled.li`
 /**
  * Post List Component
  */
-const PostList = () => {
+const PostList = ({ posts }) => {
+  console.log(posts);
   return (
     <PostListBlock>
-      <PostListItem>
-        <Post />
-      </PostListItem>
+      {posts.map(post => (
+        <PostListItem key={post.node.id}>
+          <Post post={post.node} />
+        </PostListItem>
+      ))}
     </PostListBlock>
   );
 };

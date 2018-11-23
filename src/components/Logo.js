@@ -30,7 +30,7 @@ const LogoBlock = styled(Link)`
 /**
  * Logo Component
  */
-const Logo = () => {
+const Logo = ({ data }) => {
   return (
     <LogoBlock to="/">
       Flux <span>/</span>

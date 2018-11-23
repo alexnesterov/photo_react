@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Layout from '../layouts/Main';
 import PostList from '../components/PostList';
@@ -6,10 +7,31 @@ import PostList from '../components/PostList';
 /**
  * Index Page Component
  */
-const IndexPage = () => (
+const IndexPage = ({ data }) => (
   <Layout>
-    <PostList />
+    <PostList posts={data.allMarkdownRemark.edges} />
   </Layout>
 );
+
+/**
+ * Query
+ */
+export const query = graphql`
+  query IndexPageQuery {
+    allMarkdownRemark {
+      totalCount
+      edges {
+        node {
+          id
+          frontmatter {
+            title
+            date(formatString: "DD MMMM, YYYY")
+          }
+          excerpt
+        }
+      }
+    }
+  }
+`;
 
 export default IndexPage;
