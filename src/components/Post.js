@@ -3,6 +3,8 @@ import styled from 'styled-components';
 
 import { _media, _color } from '../base/constants';
 
+import Img from 'gatsby-image';
+
 /**
  * Styled Components
  */
@@ -25,7 +27,7 @@ const PostHeader = styled.div`
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.15), 0 1px 0 #adadad;
 `;
 
-const PostPoster = styled.img`
+const PostPoster = styled(Img)`
   display: block;
   max-width: 100%;
 `;
@@ -71,7 +73,7 @@ const Post = ({ post }) => {
   return (
     <PostBlock>
       <PostHeader />
-      <PostPoster src="" alt="" />
+      <PostPoster fluid={post.frontmatter.image.childImageSharp.fluid} alt="" />
       <PostMain>
         <PostHead>
           <PostTitle>{post.frontmatter.title}</PostTitle>
