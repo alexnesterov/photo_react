@@ -8,11 +8,20 @@ import 'normalize.css';
 import GlobalStyle from '../../base/GlobalStyle';
 
 import BackImage from './back.jpg';
+import Footer from '../../components/Footer';
 
 /**
  * Styled Components
  */
-const LayoutBlock = styled.div``;
+const LayoutBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+`;
+
+const LayoutContent = styled.div`
+  flex: 1 1 100%;
+`;
 
 /**
  * Default Layout Component
@@ -44,7 +53,12 @@ const Layout = ({ children }) => (
             href="https://fonts.googleapis.com/css?family=Roboto+Slab:400,700|Roboto:400,500,700"
           />
         </Helmet>
-        <LayoutBlock>{children}</LayoutBlock>
+        <LayoutBlock>
+          <LayoutContent>
+            {children}
+          </LayoutContent>
+          <Footer text={data.site.siteMetadata.title} />
+        </LayoutBlock>
       </>
     )}
   />
