@@ -54,9 +54,7 @@ const Layout = ({ children }) => (
           />
         </Helmet>
         <LayoutBlock>
-          <LayoutContent>
-            {children}
-          </LayoutContent>
+          <LayoutContent>{children}</LayoutContent>
           <Footer text={data.site.siteMetadata.title} />
         </LayoutBlock>
       </>

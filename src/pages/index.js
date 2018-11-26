@@ -20,8 +20,8 @@ const IndexPage = ({ data }) => (
  */
 export const query = graphql`
   query IndexPageQuery {
-    allMarkdownRemark (
-      filter: {frontmatter: {component: {eq: "Work"}}}
+    allMarkdownRemark(
+      filter: { frontmatter: { component: { eq: "Work" } } }
       sort: { order: DESC, fields: [frontmatter___date] }
     ) {
       totalCount
