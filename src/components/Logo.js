@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { StaticQuery, graphql } from 'gatsby';
 
 import { _color, _font } from '../base/constants';
 
@@ -32,9 +33,22 @@ const LogoBlock = styled(Link)`
  */
 const Logo = ({ data }) => {
   return (
-    <LogoBlock to="/">
-      Flux <span>/</span>
-    </LogoBlock>
+    <StaticQuery
+      query={graphql`
+        query LogoQuery {
+          site {
+            siteMetadata {
+              title
+            }
+          }
+        }
+      `}
+      render={data => (
+        <LogoBlock to="/">
+          {data.site.siteMetadata.title} <span>/</span>
+        </LogoBlock>
+      )}
+    />
   );
 };
 
