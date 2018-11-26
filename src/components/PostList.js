@@ -24,7 +24,6 @@ const PostListItem = styled.li`
  * Post List Component
  */
 const PostList = ({ posts }) => {
-  console.log(posts);
   return (
     <PostListBlock>
       {posts.map(post => (
