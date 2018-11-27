@@ -19,7 +19,7 @@ const PageTitleBlock = styled.h1`
     height: 3px;
     margin: 5px 0 0;
     background: url(${underline}) repeat-x;
-    opacity: .1;
+    opacity: 0.1;
   }
 `;
 
