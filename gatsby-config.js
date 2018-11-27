@@ -1,4 +1,5 @@
 module.exports = {
+  pathPrefix: '/photo_react',
   siteMetadata: {
     title: 'PHoto',
   },
@@ -36,7 +37,7 @@ module.exports = {
       resolve: `gatsby-plugin-styled-components`,
       options: {
         // Add any options here
-        'fileName': false
+        fileName: false,
       },
     },
     'gatsby-transformer-remark',
@@ -44,4 +45,4 @@ module.exports = {
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
   ],
-}
+};
