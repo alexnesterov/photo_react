@@ -18,8 +18,13 @@ const TextBlock = styled.div`
 /**
  * Text Component
  */
-const Text = ({ value }) => {
-  return <TextBlock dangerouslySetInnerHTML={{ __html: value }} />;
+const Text = ({ value, className }) => {
+  return (
+    <TextBlock
+      dangerouslySetInnerHTML={{ __html: value }}
+      className={className}
+    />
+  );
 };
 
 export default Text;
