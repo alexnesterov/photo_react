@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { _media, _color } from '../base/constants';
 
 import Img from 'gatsby-image';
+import Text from '../components/Text';
 
 /**
  * Styled Components
@@ -79,7 +80,9 @@ const Post = ({ post }) => {
           <PostTitle>{post.frontmatter.title}</PostTitle>
           <PostDate>{post.frontmatter.date}</PostDate>
         </PostHead>
-        <PostContent>{post.excerpt}</PostContent>
+        <PostContent>
+          <Text value={post.html} />
+        </PostContent>
       </PostMain>
     </PostBlock>
   );
