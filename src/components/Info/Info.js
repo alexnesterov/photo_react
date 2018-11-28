@@ -68,44 +68,36 @@ const InfoCol = styled.div`
 `;
 
 /**
- * Inco Component
+ * Info Component
  */
 const Info = () => {
   return (
     <StaticQuery
       query={graphql`
         query InfoQuery {
-          allMarkdownRemark(
-            filter: { frontmatter: { component: { eq: "Info" } } }
-          ) {
-            edges {
-              node {
-                id
-                frontmatter {
-                  component
-                  title
-                  col1
-                  col2
-                }
-              }
+          markdownRemark(frontmatter: { component: { eq: "Info" } }) {
+            id
+            frontmatter {
+              component
+              title
+              col1
+              col2
             }
           }
         }
       `}
-      render={({ allMarkdownRemark }) => (
+      render={({ markdownRemark }) => (
         <InfoBlock>
-          <InfoTitle>
-            {allMarkdownRemark.edges[0].node.frontmatter.title}
-          </InfoTitle>
+          <InfoTitle>{markdownRemark.frontmatter.title}</InfoTitle>
           <InfoContent>
             <InfoCol
               dangerouslySetInnerHTML={{
-                __html: allMarkdownRemark.edges[0].node.frontmatter.col1,
+                __html: markdownRemark.frontmatter.col1,
               }}
             />
             <InfoCol
               dangerouslySetInnerHTML={{
-                __html: allMarkdownRemark.edges[0].node.frontmatter.col2,
+                __html: markdownRemark.frontmatter.col2,
               }}
             />
           </InfoContent>
