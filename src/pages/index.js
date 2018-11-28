@@ -29,9 +29,11 @@ export const query = graphql`
         node {
           id
           frontmatter {
+            path
             title
             date(formatString: "DD MMMM, YYYY")
             image {
+              name
               childImageSharp {
                 fluid {
                   ...GatsbyImageSharpFluid

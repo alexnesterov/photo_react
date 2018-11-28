@@ -1,6 +1,7 @@
 ---
+path: '/work-002'
 component: 'Work'
-title: 'COOL PHOTOSHOP PHOTO AND AND EVEN BETTER TITLE'
+title: 'COOL PHOTOSHOP PHOTO AND AND EVEN BETTER TITLE 2'
 date: '2017-08-11'
 image: '../../images/post002.jpeg'
 ---
