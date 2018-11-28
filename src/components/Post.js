@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import { _media, _color } from '../base/constants';
 
 import Img from 'gatsby-image';
+import Text from '../components/Text';
+import { Link } from 'gatsby';
 
 /**
  * Styled Components
@@ -55,6 +57,11 @@ const PostTitle = styled.h2`
   text-transform: uppercase;
 `;
 
+const PostLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+`;
+
 const PostDate = styled.div`
   font-size: 11px;
   line-height: 1;
@@ -73,13 +80,22 @@ const Post = ({ post }) => {
   return (
     <PostBlock>
       <PostHeader />
-      <PostPoster fluid={post.frontmatter.image.childImageSharp.fluid} alt="" />
+      <PostPoster
+        fluid={post.frontmatter.image.childImageSharp.fluid}
+        alt={post.frontmatter.image.name}
+      />
       <PostMain>
         <PostHead>
-          <PostTitle>{post.frontmatter.title}</PostTitle>
+          <PostTitle>
+            <PostLink to={'/work' + post.frontmatter.path}>
+              {post.frontmatter.title}
+            </PostLink>
+          </PostTitle>
           <PostDate>{post.frontmatter.date}</PostDate>
         </PostHead>
-        <PostContent>{post.excerpt}</PostContent>
+        <PostContent>
+          <Text value={post.html} />
+        </PostContent>
       </PostMain>
     </PostBlock>
   );

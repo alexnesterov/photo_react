@@ -4,7 +4,16 @@ import styled from 'styled-components';
 /**
  * Styled Components
  */
-const TextBlock = styled.div``;
+const TextBlock = styled.div`
+  p {
+    &:first-child {
+      margin-top: 0;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+`;
 
 /**
  * Text Component
