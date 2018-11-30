@@ -21,12 +21,8 @@ const getTransitionStyles = {
 };
 
 class Transition extends React.PureComponent {
-  logStatus(status) {
-    console.log(status);
-  }
   render() {
     const { children, location } = this.props;
-    console.log(location);
 
     return (
       <TransitionGroup>
@@ -44,7 +40,6 @@ class Transition extends React.PureComponent {
               }}
             >
               {children}
-              {/* {this.logStatus(status)} */}
             </div>
           )}
         </ReactTransition>
