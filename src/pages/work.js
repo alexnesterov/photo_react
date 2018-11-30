@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../layouts/Main';
 import PageTitle from '../components/PageTitle';
 import PostList from '../components/PostList';
 
@@ -10,10 +9,10 @@ import PostList from '../components/PostList';
  */
 const WorkPage = ({ data }) => {
   return (
-    <Layout>
+    <>
       <PageTitle title="Work" />
       <PostList posts={data.allMarkdownRemark.edges} />
-    </Layout>
+    </>
   );
 };
 

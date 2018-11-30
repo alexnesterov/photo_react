@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../layouts/Main';
 import PostList from '../components/PostList';
 import Info from '../components/Info';
 
@@ -9,10 +8,10 @@ import Info from '../components/Info';
  * Index Page Component
  */
 const IndexPage = ({ data }) => (
-  <Layout>
+  <>
     <PostList posts={data.allMarkdownRemark.edges} />
     <Info />
-  </Layout>
+  </>
 );
 
 /**

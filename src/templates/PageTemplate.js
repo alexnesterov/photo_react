@@ -1,7 +1,6 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import Layout from '../layouts/Main';
 import PageTitle from '../components/PageTitle';
 import Text from '../components/Text';
 
@@ -12,10 +11,10 @@ const PageTemplate = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
+    <>
       <PageTitle title={frontmatter.title} />
       <Text value={html} />
-    </Layout>
+    </>
   );
 };
 

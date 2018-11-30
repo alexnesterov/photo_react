@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Location } from '@reach/router';
 
 import { _media } from '../base/constants';
 
-import Layout from './Default';
 import Container from '../base/Container';
 import Sidebar from '../components/Sidebar';
+import Transition from '../components/Transition';
 
 /**
  * Styled Components
@@ -45,16 +46,20 @@ const MainContent = styled.div`
  */
 const Main = ({ children }) => {
   return (
-    <Layout>
-      <MainBlock>
-        <MainInner>
-          <MainSidebar>
-            <Sidebar />
-          </MainSidebar>
-          <MainContent>{children}</MainContent>
-        </MainInner>
-      </MainBlock>
-    </Layout>
+    <MainBlock>
+      <MainInner>
+        <MainSidebar>
+          <Sidebar />
+        </MainSidebar>
+        <MainContent>
+          <Location>
+            {({ location }) => (
+              <Transition location={location}>{children}</Transition>
+            )}
+          </Location>
+        </MainContent>
+      </MainInner>
+    </MainBlock>
   );
 };
 

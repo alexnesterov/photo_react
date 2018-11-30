@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 
-import Layout from '../layouts/Main';
 import PageTitle from '../components/PageTitle';
 import Text from '../components/Text';
 
@@ -30,7 +29,7 @@ const WorkTemplate = ({ data }) => {
   const { markdownRemark } = data;
   const { frontmatter, html } = markdownRemark;
   return (
-    <Layout>
+    <>
       <PageTitle title={frontmatter.title} />
       <WorkDate>{frontmatter.date}</WorkDate>
       <WorkImage
@@ -38,7 +37,7 @@ const WorkTemplate = ({ data }) => {
         alt={frontmatter.image.name}
       />
       <WorkContent value={html} />
-    </Layout>
+    </>
   );
 };
 
