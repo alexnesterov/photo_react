@@ -7,6 +7,7 @@ import { StaticQuery, graphql } from 'gatsby';
 import 'normalize.css';
 import GlobalStyle from '../../base/GlobalStyle';
 
+import Main from '../Main';
 import BackImage from './back.jpg';
 import Footer from '../../components/Footer';
 
@@ -54,7 +55,11 @@ const Layout = ({ children }) => (
           />
         </Helmet>
         <LayoutBlock>
-          <LayoutContent>{children}</LayoutContent>
+          <LayoutContent>
+            <Main>
+              {children}
+            </Main>
+          </LayoutContent>
           <Footer text={data.site.siteMetadata.title} />
         </LayoutBlock>
       </>

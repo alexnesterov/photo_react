@@ -57,13 +57,13 @@ const Navigation = () => {
           <NavigationLink to="/">Home</NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink to="/about">About</NavigationLink>
+          <NavigationLink to="/about/">About</NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink to="/work">Work</NavigationLink>
+          <NavigationLink to="/work/">Work</NavigationLink>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink to="/contact">Contact</NavigationLink>
+          <NavigationLink to="/contact/">Contact</NavigationLink>
         </NavigationItem>
       </NavigationList>
     </NavigationBlock>
