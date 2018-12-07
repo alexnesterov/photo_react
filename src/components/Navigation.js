@@ -33,37 +33,55 @@ const NavigationItem = styled.li`
     margin-top: 0;
     padding: 0 10px;
   `}
-`;
 
-const NavigationLink = styled(Link)`
-  display: inline-block;
-  color: ${_color.primary};
-  text-decoration: none;
-  cursor: pointer;
+  a {
+    display: inline-block;
+    color: ${_color.primary};
+    text-decoration: none;
+    cursor: pointer;
 
-  &:hover {
-    color: ${_color.accent};
+    &:hover {
+      color: ${_color.accent};
+    }
+
+    &._active {
+      color: ${_color.accent};
+    }
   }
 `;
 
 /**
  * Navigation Component
  */
-const Navigation = () => {
+const Navigation = ({ props }) => {
+  // this link will be active when itself or deeper routes
+  // are current
+  const isPartiallyActive = ({ isPartiallyCurrent }) => {
+    return isPartiallyCurrent ? { className: '_active' } : null;
+  };
+
   return (
     <NavigationBlock>
       <NavigationList>
         <NavigationItem>
-          <NavigationLink to="/">Home</NavigationLink>
+          <Link to="/" activeClassName="_active">
+            Home
+          </Link>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink to="/about/">About</NavigationLink>
+          <Link to="/about/" activeClassName="_active">
+            About
+          </Link>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink to="/work/">Work</NavigationLink>
+          <Link to="/work/" getProps={isPartiallyActive}>
+            Work
+          </Link>
         </NavigationItem>
         <NavigationItem>
-          <NavigationLink to="/contact/">Contact</NavigationLink>
+          <Link to="/contact/" activeClassName="_active">
+            Contact
+          </Link>
         </NavigationItem>
       </NavigationList>
     </NavigationBlock>
